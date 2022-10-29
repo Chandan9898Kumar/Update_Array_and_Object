@@ -42,5 +42,11 @@ sorting	  |reverse, sort	                   |   copy the array first
 
 
 
+`In general, you should only mutate objects that you have just created. If you were inserting a new artwork, you could mutate it, but if you’re dealing with something that’s already in state, you need to make a copy by using ... spread syntax.`
+
+
+
+
+
 
 
