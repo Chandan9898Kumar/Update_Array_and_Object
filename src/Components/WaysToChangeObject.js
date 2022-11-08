@@ -1,5 +1,5 @@
+
 import React, { useState } from "react";
-import Myfunctions from "./StateUpdate";
 const objectData = {
   name: "as",
   age: 9090,
@@ -12,29 +12,27 @@ const objectData = {
 };
 const ObjectFunction = () => {
   const[inputdata,setInputData]=useState('')
-  const [datafun, setDataFun] = useState(false);
   const [count, setCount] = useState(objectData);
 
   console.log(count, "count");
   const HandleAdd=(e)=>{
     e.preventDefault()
-    //  in an Object, we can append data by 3 ways(should be key :value): 
+    //  in an Object, we can append(Add) data by 3 ways(should be key :value):   Console it.
 
-    1. count.lunch=inputdata
-    2. count['lunch']=inputdata
+    // 1. count.lunch=inputdata
+    // 2. count['lunch']=inputdata
 
-    3.// setCount({
-    //   ...count,
-    //   Lunch:inputdata,
-    //   Time:inputdata.length
-    // })
+    // 3.
+    setCount({
+      ...count,
+      Lunch:inputdata,
+      Time:inputdata.length
+    })
     setInputData('')
 
   }
   return (
     <>
-      <button onClick={(e) => setDataFun(true)}>Show Function Details</button>
-      {datafun ? <Myfunctions /> : ""}
       Name: {count.name}
       <br />
       Age: {count.age}
